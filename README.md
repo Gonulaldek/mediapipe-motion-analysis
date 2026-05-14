@@ -49,6 +49,8 @@ mediapipe-motion-analysis/
 │   ├── finger_spread_ref.mp4
 │   └── wrist_flexion_ref.mp4
 └── README.md
+Reference video files are intentionally excluded from the public repository.  
+To use the reference video panel locally, place your own videos inside the `videos/` folder using the filenames listed in `videos/README.md`.
 ```
 
 ## How to Run Locally
