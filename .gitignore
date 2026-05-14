@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/launch.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+.tmp/
+temp/
+
+# Local reference videos
+videos/*.mp4
+videos/*.mov
+videos/*.avi
+videos/*.mkv
+
+# System / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/launch.json

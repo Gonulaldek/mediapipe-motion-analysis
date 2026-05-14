@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Motion Analysis Prototype</title>
+    <meta name="description" content="Browser-based rehabilitation motion analysis prototype using MediaPipe Pose, Hands, p5.js, Canvas, webcam input and reference exercise videos.">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 0; background-color: #0a0f14; overflow: hidden;">
+    
+    <video id="videoElement" autoplay playsinline style="display: none;"></video>
+    
+    <div id="ui-panel" style="position: absolute; top: 20px; right: 20px; z-index: 10; background: rgba(15, 20, 25, 0.85); padding: 15px; border-radius: 12px; border: 1px solid #333; width: 280px; font-family: sans-serif;">
+        <h3 style="margin-top: 0; color: #00ffff; text-align: center; font-size: 16px;">EGZERSİZ SEÇİMİ</h3>
+        
+        <select id="exerciseSelect" style="width: 100%; padding: 8px; margin-bottom: 15px; background: #222; color: white; border: 1px solid #555; border-radius: 5px; outline: none; cursor: pointer;">
+            <option value="bicep_curl">Bicep Curl (Kol)</option>
+            <option value="squat">Squat (Bacak)</option>
+            <option value="finger_extension">Parmak Ekstansiyon (El)</option>
+            <option value="finger_spread">Parmak Yana Aç-Kapa (El)</option>
+            <option value="wrist_flexion">Bilek Aç-Kapa (El)</option>
+        </select>
+
+        <div class="search-shell">
+            <input type="text" id="searchInput" class="search-input" placeholder="Hareket Ara (Örn: Squat)...">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+
+        <div id="reportCard" style="background: rgba(0, 0, 0, 0.6); border: 1px solid #00ffff; border-radius: 8px; overflow: hidden; display: none;">
+            <h4 style="margin: 0; padding: 8px; background: rgba(0, 255, 255, 0.1); color: #00ffff; font-size: 12px; text-align: center; border-bottom: 1px solid #00ffff;">🩺 ANALİZ VE REFERANS</h4>
+            
+            <div class="reference-video-shell">
+                
+                <video id="referenceVideo" class="referenceVideoElement" loop muted autoplay playsinline></video>
+
+                <canvas id="refCanvas" class="refOverlayCanvas"></canvas>
+
+                <div id="refAngleBadge" class="ref-angle-badge ref-angle-badge--left">
+
+                    <span class="ref-angle-badge-label">ANLIK AÇI</span>
+
+
+                    <strong id="refAngleBadgeValue" class="ref-angle-badge-value">--°</strong>
+
+
+                </div>
+            </div>
+            
+            <div id="infoText" class="info-text"></div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    
+</body>
+</html>
