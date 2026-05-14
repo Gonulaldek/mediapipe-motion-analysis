@@ -49,7 +49,12 @@ mediapipe-motion-analysis/
 │   ├── finger_spread_ref.mp4
 │   └── wrist_flexion_ref.mp4
 └── README.md
+<<<<<<< HEAD
 Reference video files are intentionally excluded from the public repository.  
+=======
+Reference video files are intentionally excluded from the public repository.
+
+>>>>>>> 9ac0838 (Clarify reference video assets)
 To use the reference video panel locally, place your own videos inside the `videos/` folder using the filenames listed in `videos/README.md`.
 ```
 
@@ -65,6 +70,7 @@ Then open:
 
 ```txt
 http://localhost:8000
+
 ```
 
 Allow camera permission when the browser asks for it.
